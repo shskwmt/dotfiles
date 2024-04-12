@@ -576,7 +576,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; yasnippet
   (setq snippet-directory (getenv "EMACS_SNIPPET_DIR"))
-  (setq yas-snippet-dirs `(snnipet-directory))
+  (setq yas-snippet-dirs `(snippet-directory))
   (defun open-snippet-directory ()
     (interactive)
     (find-file snippet-directory))
@@ -593,7 +593,7 @@ before packages are loaded."
   (defun org-open-today ()
     (interactive)
     (find-file (concat org-directory (format-time-string "%Y%m%d") ".org")))
-  (spacemacs/set-leader-keys "oo" 'open-org-today)
+  (spacemacs/set-leader-keys "oo" 'org-open-today)
 
   (defun org-insert-todo ()
     (interactive)
