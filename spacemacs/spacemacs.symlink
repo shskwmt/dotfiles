@@ -237,8 +237,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -424,9 +424,9 @@ It should only modify the values of Spacemacs settings."
    ;;                       pdf-view-mode
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
-   ;; When used in a plist, `visual' takes precedence over `relative'.
+   ;; When used in a plist, `visual' take
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers `visual
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
@@ -574,6 +574,73 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; yasnippet
+  (setq snippet-directory (getenv "EMACS_SNIPPET_DIR"))
+  (setq yas-snippet-dirs `(snnipet-directory))
+  (defun open-snippet-directory ()
+    (interactive)
+    (find-file snippet-directory))
+
+
+  ;; org-mode
+  (setq org-directory (getenv "EMACS_ORG_DIR"))
+  (setq org-default-notes-file (concat org-directory "main.org"))
+  (setq org-agenda-files (list org-directory))
+  (setq system-time-locale "C") ;; to avoid Japanese in the time stamp
+  (setq org-log-done 'time)
+  (setq org-startup-truncated nil)
+
+  (defun org-open-today ()
+    (interactive)
+    (find-file (concat org-directory (format-time-string "%Y%m%d") ".org")))
+  (spacemacs/set-leader-keys "oo" 'open-org-today)
+
+  (defun org-insert-todo ()
+    (interactive)
+    (forward-line)
+    (newline)
+    (forward-line -1)
+    (insert (concat "* TODO  wrote on: " (format-time-string "%Y-%m-%d %H:%M:%S")))
+    (beginning-of-line)
+    (forward-char 7))
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "it" 'org-insert-todo)
+
+  (defun org-insert-memo ()
+    (interactive)
+    (forward-line)
+    (newline)
+    (forward-line -1)
+    (insert (concat "*  wrote on: " (format-time-string "%Y-%m-%d %H:%M:%S")))
+    (beginning-of-line)
+    (forward-char 2))
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "im" 'org-insert-memo)
+
+  (defun org-insert-header ()
+    (interactive)
+    (goto-char 0)
+    (newline)
+    (forward-line -1)
+    (insert (concat "#+TITLE: " (format-time-string "%Y%m%d") "\n#+DATE: " (format-time-string "%Y-%m-%d"))))
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "ih" 'org-insert-header)
+
+
+  ;; wsl
+  (spacemacs/declare-prefix "ow" "wsl")
+  (defun wsl-copy (start end)
+    (interactive "r")
+    (shell-command-on-region start end "iconv -t sjis | clip.exe")
+    (deactivate-mark))
+  (spacemacs/set-leader-keys "owc" 'wsl-copy)
+
+  (defun wsl-paste ()
+    (interactive)
+    (let ((clipboard
+	         (shell-command-to-string "powershell.exe -command 'Get-Clipboard' 2> /dev/null")))
+      (setq clipboard (replace-regexp-in-string "\r" "" clipboard)) ; Remove Windows ^M characters
+      (setq clipboard (substring clipboard 0 -1)) ; Remove newline added by Powershell
+      (insert clipboard)))
+  (spacemacs/set-leader-keys "owp" 'wsl-paste)
+
 )
 
 
