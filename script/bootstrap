@@ -98,7 +98,7 @@ link_file () {
 
     if [ "$backup" == "true" ]
     then
-      mv "$dst" "{$dst}.backup"
+      mv "$dst" "${dst}.backup"
       success "moved $dst to ${dst}.backup"
     fi
 
