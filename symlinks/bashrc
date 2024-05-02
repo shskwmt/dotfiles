@@ -171,9 +171,6 @@ if [ -f ~/.bash_envs ]; then
     . ~/.bash_envs
 fi
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_envs, instead of adding them here directly.
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
