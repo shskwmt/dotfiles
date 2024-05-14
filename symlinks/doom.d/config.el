@@ -138,8 +138,8 @@
 (global-set-key (kbd "C-c C-y") 'wsl-paste)
 
 ;; yasnippet
-(setq snippet-directory (getenv "EMACS_SNIPPET_DIR"))
-(setq yas-snippet-dirs `(snippet-directory))
+;;(setq snippet-directory (getenv "EMACS_SNIPPET_DIR"))
+;;(setq yas-snippet-dirs `(snippet-directory))
 
 ;; auto-dim-other-buffers
 (auto-dim-other-buffers-mode t)
