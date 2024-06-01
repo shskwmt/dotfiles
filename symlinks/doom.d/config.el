@@ -142,7 +142,7 @@
 (setq yas-snippet-dirs `(snippet-directory))
 
 ;; auto-dim-other-buffers
-(auto-dim-other-buffers-mode t)
+;;(auto-dim-other-buffers-mode t)
 
 ;; window
 (global-set-key (kbd "C-c <left>") 'windmove-left)
