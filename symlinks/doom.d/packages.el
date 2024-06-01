@@ -52,3 +52,4 @@
 (package! mozc)
 (package! auto-dim-other-buffers)
 (package! vterm)
+(package! disable-mouse)
