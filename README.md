@@ -2,10 +2,19 @@
 
 my dotfiles
 
+## Requirements
+
+- [homebrew](https://brew.sh/)
+- emacs
+
 ## Install
 
 ```
 git clone git@github.com:shskwmt/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./script/bootstrap.el
+./script/install.el
+
+source ~/.bashrc
+
+brew bundle
 ```
