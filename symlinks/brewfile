@@ -1,3 +1,4 @@
 tap "homebrew/bundle"
 brew "emacs"
 brew "tmux"
+brew "fish"

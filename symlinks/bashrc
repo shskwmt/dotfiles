@@ -182,3 +182,7 @@ if [ -z $TMUX ]; then
     tmux -2
   fi
 fi
+
+if [ -x "$(command -v fish)" ]; then
+  exec fish
+fi
