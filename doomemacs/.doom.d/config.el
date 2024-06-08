@@ -153,3 +153,6 @@
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "C-t") 'other-window)
+
+;; open
+(global-set-key (kbd "C-c o p") 'list-processes)
