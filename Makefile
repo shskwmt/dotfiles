@@ -4,7 +4,7 @@ YELLOW = $$(tput setaf 226)
 RESET = $$(tput sgr0)
 
 .PHONY: install
-install: brew bash doomemacs tmux wsl
+install: brew bash doomemacs tmux fish wsl
 
 .PHONY: clean
 clean:
@@ -36,6 +36,11 @@ doomemacs:
 tmux:
 	@printf "$(YELLOW)--- tmux -----------------------------------------------\n$(RESET)"
 	stow -t "$$HOME" --ignore=".*\.bash" tmux
+
+.PHONY: fish
+fish:
+	@printf "$(YELLOW)--- fish -----------------------------------------------\n$(RESET)"
+	stow -t "$$HOME/.config/fish" --ignore=".*\.bash" fish
 
 .PHONY: wsl
 wsl:
