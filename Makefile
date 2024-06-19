@@ -4,7 +4,7 @@ YELLOW = $$(tput setaf 226)
 RESET = $$(tput sgr0)
 
 .PHONY: install
-install: brew bash doomemacs tmux
+install: brew bash doomemacs tmux wsl
 
 .PHONY: clean
 clean:

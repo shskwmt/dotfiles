@@ -17,3 +17,11 @@
   (copy-file (concat wsl-dir "terminal-settings.json") windows-terminal-settings-path t)
   (message "created windows terminal setttings")
   )
+
+;;; copy .wslconfig
+(setq wslconfig-path
+      (concat windows-user-dir "/.wslconfig"))
+(when is-wsl?
+  (copy-file (concat wsl-dir "wslconfig") wslconfig-path t)
+  (message "created .wslconfig")
+  )
