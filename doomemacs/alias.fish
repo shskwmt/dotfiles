@@ -1,1 +1,1 @@
-alias ec='emacsclient -nw -a "" -c'
+alias e='emacsclient -nw -a "" -c'
