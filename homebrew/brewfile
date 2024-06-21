@@ -15,6 +15,7 @@ brew "fzf"
 brew "bat"
 brew "ripgrep"
 brew "eza"
+brew "fd"
 
 brew "jq"
 

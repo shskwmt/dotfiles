@@ -31,7 +31,7 @@ function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
 function ..... ; cd ../../../.. ; end
 
-alias cf='cd (find . -type d | fzf)'
+alias cf='cd (fd . -t d | fzf)'
 alias bf='bat (fzf)'
 
 alias ls='eza'
