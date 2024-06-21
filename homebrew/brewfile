@@ -17,6 +17,7 @@ brew "bat"
 brew "ripgrep"
 brew "eza"
 brew "fd"
+brew "procs"
 
 brew "jq"
 brew "git-delta"
