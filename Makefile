@@ -30,14 +30,14 @@ bash:
 .PHONY: doomemacs
 doomemacs:
 	@printf "$(YELLOW)--- doomemacs ------------------------------------------\n$(RESET)"
-	stow -t "$$HOME" --ignore=".*\.bash" doomemacs
+	stow -t "$$HOME" --ignore=".*\.bash" --ignore=".*\.fish" doomemacs
 	sudo apt install -y emacs-mozc
 
 .PHONY: tmux
 tmux:
 	@printf "$(YELLOW)--- tmux -----------------------------------------------\n$(RESET)"
 	if [ ! -e "$$HOME/.tmux/plugins/tpm" ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi
-	stow -t "$$HOME" --ignore=".*\.bash" tmux
+	stow -t "$$HOME" --ignore=".*\.bash" --ignore=".*\.fish" tmux
 	tmux new -d -s __noop >/dev/null 2>&1 || true
 	tmux set-environment -g TMUX_PLUGIN_MANAGER_PATH "~/.tmux/plugins"
 	"$$HOME"/.tmux/plugins/tpm/bin/install_plugins || true
@@ -47,6 +47,7 @@ tmux:
 fish:
 	@printf "$(YELLOW)--- fish -----------------------------------------------\n$(RESET)"
 	stow -t "$$HOME/.config/fish" --ignore=".*\.bash" fish
+	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
 
 .PHONY: wsl
 wsl:
