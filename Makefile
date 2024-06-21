@@ -35,7 +35,12 @@ doomemacs:
 .PHONY: tmux
 tmux:
 	@printf "$(YELLOW)--- tmux -----------------------------------------------\n$(RESET)"
+	if [ ! -e "$$HOME/.tmux/plugins/tpm" ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi
 	stow -t "$$HOME" --ignore=".*\.bash" tmux
+	tmux new -d -s __noop >/dev/null 2>&1 || true
+	tmux set-environment -g TMUX_PLUGIN_MANAGER_PATH "~/.tmux/plugins"
+	"$$HOME"/.tmux/plugins/tpm/bin/install_plugins || true
+	tmux kill-session -t __noop >/dev/null 2>&1 || true
 
 .PHONY: fish
 fish:
