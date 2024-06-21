@@ -19,6 +19,7 @@ brew "eza"
 brew "fd"
 
 brew "jq"
+brew "git-delta"
 
 brew "tfenv"
 brew "tflint"

@@ -4,7 +4,7 @@ YELLOW = $$(tput setaf 226)
 RESET = $$(tput sgr0)
 
 .PHONY: install
-install: brew bash doomemacs tmux fish wsl
+install: brew bash tmux fish doomemacs wsl
 
 .PHONY: clean
 clean:
@@ -27,12 +27,6 @@ bash:
 	@printf "$(YELLOW)--- bash -----------------------------------------------\n$(RESET)"
 	stow -t "$$HOME" --ignore=".*\.bash" bash
 
-.PHONY: doomemacs
-doomemacs:
-	@printf "$(YELLOW)--- doomemacs ------------------------------------------\n$(RESET)"
-	stow -t "$$HOME" --ignore=".*\.bash" --ignore=".*\.fish" doomemacs
-	sudo apt install -y emacs-mozc
-
 .PHONY: tmux
 tmux:
 	@printf "$(YELLOW)--- tmux -----------------------------------------------\n$(RESET)"
@@ -48,6 +42,18 @@ fish:
 	@printf "$(YELLOW)--- fish -----------------------------------------------\n$(RESET)"
 	stow -t "$$HOME/.config/fish" --ignore=".*\.bash" fish
 	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
+
+.PHONY: git
+git:
+	@printf "$(YELLOW)--- git ------------------------------------------------\n$(RESET)"
+	stow -t "$$HOME" --ignore=".*\.bash" --ignore=".*\.fish" git
+	@printf "set your user info to '~/.gitconfig.local'"
+
+.PHONY: doomemacs
+doomemacs:
+	@printf "$(YELLOW)--- doomemacs ------------------------------------------\n$(RESET)"
+	stow -t "$$HOME" --ignore=".*\.bash" --ignore=".*\.fish" doomemacs
+	sudo apt install -y emacs-mozc
 
 .PHONY: wsl
 wsl:
