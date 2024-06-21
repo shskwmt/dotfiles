@@ -1,13 +1,17 @@
 tap "homebrew/bundle"
 
+brew "stow"
+
 brew "emacs"
+brew "vim"
+
 brew "tmux"
 brew "fish"
-brew "stow"
-brew "tfenv"
-brew "tflint"
+
 brew "gh"
 brew "fzf"
 brew "bat"
 brew "ripgrep"
-brew "tig"
+
+brew "tfenv"
+brew "tflint"
