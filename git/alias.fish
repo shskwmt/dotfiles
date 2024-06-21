@@ -1,5 +1,5 @@
 abbr g git
-subcommand_abbr git c "commit -m"
+subcommand_abbr git cm "commit -m"
 subcommand_abbr git co "checkout"
 subcommand_abbr git a "add"
 subcommand_abbr git s "status"
@@ -9,3 +9,4 @@ subcommand_abbr git ps "push"
 subcommand_abbr git pl "pull"
 subcommand_abbr git b "branch"
 subcommand_abbr git f "fetch -p"
+subcommand_abbr git m "merge"
