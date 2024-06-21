@@ -31,6 +31,7 @@ bash:
 doomemacs:
 	@printf "$(YELLOW)--- doomemacs ------------------------------------------\n$(RESET)"
 	stow -t "$$HOME" --ignore=".*\.bash" doomemacs
+	sudo apt install -y emacs-mozc
 
 .PHONY: tmux
 tmux:
@@ -51,3 +52,4 @@ fish:
 wsl:
 	@printf "$(YELLOW)--- wsl ------------------------------------------------\n$(RESET)"
 	./script/setup_wsl.el
+	sudo apt install -y wslu
