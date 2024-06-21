@@ -8,10 +8,15 @@ brew "vim"
 brew "tmux"
 brew "fish"
 
+brew "git"
 brew "gh"
+
 brew "fzf"
 brew "bat"
 brew "ripgrep"
+brew "eza"
+
+brew "jq"
 
 brew "tfenv"
 brew "tflint"

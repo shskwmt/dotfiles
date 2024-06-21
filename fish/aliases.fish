@@ -33,4 +33,8 @@ function ..... ; cd ../../../.. ; end
 
 alias cf='cd (find . -type d | fzf)'
 alias bf='bat (fzf)'
-alias lla='ls -la'
+
+alias ls='eza'
+alias ll='eza -l'
+alias la='eza -a'
+alias lla='eza -la'
