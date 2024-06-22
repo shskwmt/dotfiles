@@ -4,7 +4,7 @@ YELLOW = $$(tput setaf 226)
 RESET = $$(tput sgr0)
 
 .PHONY: install
-install: brew bash tmux fish doomemacs wsl
+install: brew bash tmux fish git doomemacs wsl
 
 .PHONY: clean
 clean:
@@ -40,14 +40,16 @@ tmux:
 .PHONY: fish
 fish:
 	@printf "$(YELLOW)--- fish -----------------------------------------------\n$(RESET)"
+	if [ -f "$$HOME/.config/fish/config.fish" ]; then mv "$$HOME/.config/fish/config.fish" "$$HOME/.config/fish/config.fish.bak"; fi
 	stow -t "$$HOME/.config/fish" --ignore=".*\.bash" fish
 	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
 
 .PHONY: git
 git:
 	@printf "$(YELLOW)--- git ------------------------------------------------\n$(RESET)"
-	stow -t "$$HOME" --ignore=".*\.bash" --ignore=".*\.fish" git
+	if [ -f "$$HOME/.gitconfig" ]; then mv "$$HOME/.gitconfig" "$$HOME/.gitconfig.local"; fi
 	@printf "set your user info to '~/.gitconfig.local'"
+	stow -t "$$HOME" --ignore=".*\.bash" --ignore=".*\.fish" git
 
 .PHONY: doomemacs
 doomemacs:
@@ -59,4 +61,8 @@ doomemacs:
 wsl:
 	@printf "$(YELLOW)--- wsl ------------------------------------------------\n$(RESET)"
 	./script/setup_wsl.el
+	sudo apt install -y gnupg2 apt-transport-https
+	wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
+	echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.wslutiliti.es/kali kali-rolling main" | sudo tee -a /etc/apt/sources.list.d/wslu.list
+	sudo apt update
 	sudo apt install -y wslu
