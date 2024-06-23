@@ -11,12 +11,17 @@ vars:
 includes:
   homebrew:
     taskfile: ./homebrew/Taskfile.yml
+  tmux:
+    taskfile: ./tmux/Taskfile.yml
 
 tasks:
   build:
+    desc: Build dotfiles
     cmds:
       - task: homebrew
+      - task: tmux
 
   clean:
     cmds:
       - task: homebrew:clean
+      - task: tmux:clean

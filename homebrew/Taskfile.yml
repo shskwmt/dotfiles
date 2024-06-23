@@ -3,14 +3,16 @@ version: '3'
 tasks:
   default:
     cmds:
-      - task: symlink
+      - task: brewfile
       - task: bundle
 
   clean:
+    desc: Clean homebrew
     cmds:
       - rm "$HOME/.brewfile"
 
-  symlink:
+  brewfile:
+    desc: Create symlink
     cmds:
       - if [ -f "$HOME/.brewfile" ]; then rm "$HOME/.brewfile"; fi
       - ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "$HOME/.brewfile"
@@ -18,6 +20,7 @@ tasks:
       - ./homebrew/brewfile
 
   bundle:
+    desc: Brew bundle
     cmds:
       - cmd: if [ -d "$HOME/.linuxbrew" ]; then eval "$(~/.linuxbrew/bin/brew shellenv)"; fi
         platforms: [linux]

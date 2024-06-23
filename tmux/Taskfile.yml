@@ -1,0 +1,43 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: tpm
+      - task: tmux-conf
+      - task: setup
+
+  clean:
+    cmds:
+      - task: clean-tpm
+      - task: clean-tmux-conf
+
+  tpm:
+    desc: Install tpm
+    cmds:
+      - task: clean-tpm
+      - git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  clean-tpm:
+    cmds:
+      - rm -rf ~/.tmux/plugins/tpm
+
+  tmux-conf:
+    desc: Create symlinks
+    cmds:
+      - stow -t ~ --ignore=".*\.bash" --ignore=".*\.fish" --ignore="Taskfile.yml" tmux
+    generates:
+      - ~/.tmux.conf
+
+  clean-tmux-conf:
+    desc: Clean symlinks
+    cmds:
+      - stow -t ~ -D tmux
+
+  setup:
+    desc: Setup tmux and plugins
+    cmds:
+      - tmux new -d -s __noop >/dev/null 2>&1 || true
+      - tmux set-environment -g TMUX_PLUGIN_MANAGER_PATH "~/.tmux/plugins"
+      - ~/.tmux/plugins/tpm/bin/install_plugins || true
+      - tmux kill-session -t __noop >/dev/null 2>&1 || true
