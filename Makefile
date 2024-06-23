@@ -62,7 +62,7 @@ wsl:
 	@printf "$(YELLOW)--- wsl ------------------------------------------------\n$(RESET)"
 	./script/setup_wsl.el
 	sudo apt install -y gnupg2 apt-transport-https
-	wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
-	echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.wslutiliti.es/kali kali-rolling main" | sudo tee -a /etc/apt/sources.list.d/wslu.list
+	if [ ! -e "/usr/share/keyrings/wslu-archive-keyring.pgp" ]; then wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor; fi
+	if [ ! -e "/etc/apt/sources.list.d/wslu.list" ]; then echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.wslutiliti.es/kali kali-rolling main" | sudo tee -a /etc/apt/sources.list.d/wslu.list; fi
 	sudo apt update
 	sudo apt install -y wslu
