@@ -12,7 +12,10 @@ tasks:
   gitconfig:
     desc: Create gitconfig symlink
     cmds:
-      - if [ -f "~/.gitconfig" -a ! -L "~/.gitconfig" ]; then mv ~/.gitconfig ~/.gitconfig.local; fi
+      - |
+        if [ -f "~/.gitconfig" -a ! -L "~/.gitconfig" ]; then
+          mv ~/.gitconfig ~/.gitconfig.local
+        fi
       - printf "{{ .YELLOW }}Set your user info to '~/.gitconfig.local'{{ .RESET }}"
       - stow -t ~ --ignore="Taskfile.yml" git
 

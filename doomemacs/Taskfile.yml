@@ -1,0 +1,36 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: doom
+      - task: doom-d
+      - task: emacs-mozc
+
+  clean:
+    cmds:
+      - task: clean-doom-d
+
+  doom:
+    cmds:
+      - |
+        if [ ! -d ~/.config/emacs ]; then
+          git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+          ~/.config/emacs/bin/doom install
+        fi
+
+  doom-d:
+    desc: Create doom.d symlink
+    cmds:
+      - stow -t ~ --ignore=".*\.bash" --ignore=".*\.fish" doomemacs
+
+  clean-doom-d:
+    desc: Clean doom.d symlink
+    cmds:
+      - stow -t ~ -D doomemacs
+
+  emacs-mozc:
+    desc: Install emacs-mozc
+    cmds:
+      - cmd: sudo apt install -y emacs-mozc
+        platforms: [linux]

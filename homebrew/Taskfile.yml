@@ -9,21 +9,30 @@ tasks:
   clean:
     desc: Clean homebrew
     cmds:
-      - rm "$HOME/.brewfile"
+      - rm "~/.brewfile"
 
   brewfile:
     desc: Create symlink
     cmds:
-      - if [ -f "$HOME/.brewfile" ]; then rm "$HOME/.brewfile"; fi
-      - ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "$HOME/.brewfile"
+      - |
+        if [ -e "~/.brewfile" -a ! -L "~/.brewfile" ]; then
+          mv "~/.brewfile" "~/.brewfile.bak"
+        fi
+      - ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "~/.brewfile"
     sources:
       - ./homebrew/brewfile
 
   bundle:
     desc: Brew bundle
     cmds:
-      - cmd: if [ -d "$HOME/.linuxbrew" ]; then eval "$(~/.linuxbrew/bin/brew shellenv)"; fi
+      - cmd: |
+          if [ -d "~/.linuxbrew" ]; then
+            eval "$(~/.linuxbrew/bin/brew shellenv)"
+          fi
         platforms: [linux]
-      - cmd: if [ -d "/home/linuxbrew/.linuxbrew" ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
+      - cmd: |
+          if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+            eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          fi
         platforms: [linux]
       - brew bundle --file "./homebrew/brewfile"

@@ -17,6 +17,8 @@ includes:
     taskfile: ./fish/Taskfile.yml
   git:
     taskfile: ./git/Taskfile.yml
+  doomemacs:
+    taskfile: ./doomemacs/Taskfile.yml
 
 tasks:
   build:
@@ -26,6 +28,7 @@ tasks:
       - task: tmux
       - task: fish
       - task: git
+      - task: doomemacs
 
   clean:
     cmds:
@@ -33,3 +36,4 @@ tasks:
       - task: tmux:clean
       - task: fish:clean
       - task: git:clean
+      - task: doomemacs:clean
