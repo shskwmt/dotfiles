@@ -1,0 +1,22 @@
+version: '3'
+
+vars:
+  YELLOW:
+    sh: tput setaf 226
+  RESET:
+    sh: tput sgr0
+  DOTFILE_DIR:
+    sh: pwd
+
+includes:
+  homebrew:
+    taskfile: ./homebrew/Taskfile.yml
+
+tasks:
+  build:
+    cmds:
+      - task: homebrew
+
+  clean:
+    cmds:
+      - task: homebrew:clean

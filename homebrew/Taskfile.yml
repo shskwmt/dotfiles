@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: symlink
+      - task: bundle
+
+  clean:
+    cmds:
+      - rm "$HOME/.brewfile"
+
+  symlink:
+    cmds:
+      - if [ -f "$HOME/.brewfile" ]; then rm "$HOME/.brewfile"; fi
+      - ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "$HOME/.brewfile"
+    sources:
+      - ./homebrew/brewfile
+
+  bundle:
+    cmds:
+      - cmd: if [ -d "$HOME/.linuxbrew" ]; then eval "$(~/.linuxbrew/bin/brew shellenv)"; fi
+        platforms: [linux]
+      - cmd: if [ -d "/home/linuxbrew/.linuxbrew" ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
+        platforms: [linux]
+      - brew bundle --file "./homebrew/brewfile"

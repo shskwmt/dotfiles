@@ -21,6 +21,7 @@ brew "procs"
 
 brew "jq"
 brew "git-delta"
+brew "go-task"
 
 brew "tfenv"
 brew "tflint"
