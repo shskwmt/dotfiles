@@ -9,7 +9,7 @@ tasks:
   clean:
     desc: Clean homebrew
     cmds:
-      - rm "~/.brewfile"
+      - task: brewfile:clean
 
   brewfile:
     desc: Create symlink
@@ -21,6 +21,11 @@ tasks:
       - ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "~/.brewfile"
     sources:
       - ./homebrew/brewfile
+
+  brewfile:clean:
+    desc: Clean brewfile
+    cmds:
+      - rm "~/.brewfile"
 
   bundle:
     desc: Brew bundle

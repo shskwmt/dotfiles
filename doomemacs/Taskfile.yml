@@ -9,7 +9,7 @@ tasks:
 
   clean:
     cmds:
-      - task: clean-doom-d
+      - task: doom-d:clean
 
   doom:
     cmds:
@@ -22,9 +22,9 @@ tasks:
   doom-d:
     desc: Create doom.d symlink
     cmds:
-      - stow -t ~ --ignore=".*\.bash" --ignore=".*\.fish" doomemacs
+      - stow -t ~ --ignore=".*\.bash" --ignore=".*\.fish" --ignore="Taskfile.yml" doomemacs
 
-  clean-doom-d:
+  doom-d:clean:
     desc: Clean doom.d symlink
     cmds:
       - stow -t ~ -D doomemacs

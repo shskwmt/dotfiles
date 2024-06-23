@@ -7,7 +7,7 @@ tasks:
 
   clean:
     cmds:
-      - task: clean-gitconfig
+      - task: gitconfig:clean
 
   gitconfig:
     desc: Create gitconfig symlink
@@ -17,9 +17,9 @@ tasks:
           mv ~/.gitconfig ~/.gitconfig.local
         fi
       - printf "{{ .YELLOW }}Set your user info to '~/.gitconfig.local'{{ .RESET }}"
-      - stow -t ~ --ignore="Taskfile.yml" git
+      - stow -t ~ --ignore=".*\.fish" --ignore="Taskfile.yml" git
 
-  clean-gitconfig:
+  gitconfig:clean:
     desc: Clean gitconfig
     cmds:
       - stow -t ~ -D git
