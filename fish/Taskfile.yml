@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: config
+      - task: fisher
+
+  clean:
+    cmds:
+      - task: clean-config
+
+  config:
+    desc: Create config symlinks
+    cmds:
+      - stow -t ~ --ignore="Taskfile.yml" fish
+
+  clean-config:
+    desc: Clean config
+    cmds:
+      - stow -t ~ -D fish
+
+  fisher:
+    desc: Install or update fisher plugins
+    cmds:
+      - fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"

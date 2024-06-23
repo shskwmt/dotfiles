@@ -13,6 +13,8 @@ includes:
     taskfile: ./homebrew/Taskfile.yml
   tmux:
     taskfile: ./tmux/Taskfile.yml
+  fish:
+    taskfile: ./fish/Taskfile.yml
 
 tasks:
   build:
@@ -20,8 +22,10 @@ tasks:
     cmds:
       - task: homebrew
       - task: tmux
+      - task: fish
 
   clean:
     cmds:
       - task: homebrew:clean
       - task: tmux:clean
+      - task: fish:clean
