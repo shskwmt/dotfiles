@@ -19,6 +19,8 @@ includes:
     taskfile: ./git/Taskfile.yml
   doomemacs:
     taskfile: ./doomemacs/Taskfile.yml
+  wsl:
+    taskfile: ./wsl/Taskfile.yml
 
 tasks:
   build:
@@ -29,6 +31,7 @@ tasks:
       - task: fish
       - task: git
       - task: doomemacs
+      - task: wsl
 
   clean:
     cmds:
@@ -37,3 +40,4 @@ tasks:
       - task: fish:clean
       - task: git:clean
       - task: doomemacs:clean
+      - task: wsl:clean
