@@ -17,8 +17,8 @@ tasks:
       - |
         if [ -e "~/.brewfile" -a ! -L "~/.brewfile" ]; then
           mv "~/.brewfile" "~/.brewfile.bak"
+          ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "$HOME/.brewfile"
         fi
-      - ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "~/.brewfile"
     sources:
       - ./homebrew/brewfile
 
