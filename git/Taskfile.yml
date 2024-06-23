@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: gitconfig
+
+  clean:
+    cmds:
+      - task: clean-gitconfig
+
+  gitconfig:
+    desc: Create gitconfig symlink
+    cmds:
+      - if [ -f "~/.gitconfig" -a ! -L "~/.gitconfig" ]; then mv ~/.gitconfig ~/.gitconfig.local; fi
+      - printf "{{ .YELLOW }}Set your user info to '~/.gitconfig.local'{{ .RESET }}"
+      - stow -t ~ --ignore="Taskfile.yml" git
+
+  clean-gitconfig:
+    desc: Clean gitconfig
+    cmds:
+      - stow -t ~ -D git

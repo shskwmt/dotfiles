@@ -15,6 +15,8 @@ includes:
     taskfile: ./tmux/Taskfile.yml
   fish:
     taskfile: ./fish/Taskfile.yml
+  git:
+    taskfile: ./git/Taskfile.yml
 
 tasks:
   build:
@@ -23,9 +25,11 @@ tasks:
       - task: homebrew
       - task: tmux
       - task: fish
+      - task: git
 
   clean:
     cmds:
       - task: homebrew:clean
       - task: tmux:clean
       - task: fish:clean
+      - task: git:clean
