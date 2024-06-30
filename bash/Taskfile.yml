@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: bashrc
+
+  clean:
+    cmds:
+      - task: bashrc:clean
+
+  bashrc:
+    desc: Create symlinks
+    cmds:
+      - stow -t ~ --ignore="Taskfile.yml" bash
+    generates:
+      - ~/.bashrc
+
+  bashrc:clean:
+    desc: Clean symlinks
+    cmds:
+      - stow -t ~ -D bash

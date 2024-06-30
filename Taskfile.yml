@@ -11,10 +11,12 @@ vars:
 includes:
   homebrew:
     taskfile: ./homebrew/Taskfile.yml
-  tmux:
-    taskfile: ./tmux/Taskfile.yml
+  bash:
+    taskfile: ./bash/Taskfile.yml
   fish:
     taskfile: ./fish/Taskfile.yml
+  tmux:
+    taskfile: ./tmux/Taskfile.yml
   git:
     taskfile: ./git/Taskfile.yml
   doomemacs:
@@ -27,17 +29,19 @@ tasks:
     desc: Build dotfiles
     cmds:
       - task: homebrew
-      - task: tmux
+      - task: bash
       - task: fish
+      - task: tmux
       - task: git
       - task: doomemacs
       - task: wsl
 
   clean:
     cmds:
-      - task: homebrew:clean
+      - task: wsl:clean
+      - task: doomemacs:clean
+      - task: git:clean
       - task: tmux:clean
       - task: fish:clean
-      - task: git:clean
-      - task: doomemacs:clean
-      - task: wsl:clean
+      - task: bash:clean
+      - task: homebrew:clean
