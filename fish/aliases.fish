@@ -26,20 +26,43 @@ function subcommand_abbr
   eval "$abbr_temp_fn"
 end
 
+# ==========
+# cd
+# ==========
+alias cd='z'
 function ..    ; cd .. ; end
 function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
 function ..... ; cd ../../../.. ; end
 
+# ==========
+# fzf
+# ==========
+# fzf with preview
 alias fp='fzf --preview "bat --color=always {}" --preview-window "~3"'
-alias fpz='fzf --tmux 80% --preview "bat --color=always {}" --preview-window "~3"'
-alias cf='cd (fd . -t d | fzf --tmux 80%)'
-alias bf='bat (fpz)'
 
+# fzf with tmux
+alias ft='fzf --tmux 80%'
+
+# fzf with preview and tmux
+alias fpt='fzf --tmux 80% --preview "bat --color=always {}" --preview-window "~3"'
+
+# cd with fzf
+alias cf='cd (fd . -t d | ft)'
+
+# bat with fzf
+alias bf='bat (fpt)'
+
+# ==========
+# ls
+# ==========
 alias ls='eza'
 alias ll='eza -l'
 alias la='eza -a'
 alias lla='eza -la'
 
+# ==========
+# others
+# ==========
 alias ps='procs'
 alias grep='rg'
