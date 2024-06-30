@@ -18,6 +18,8 @@ brew "ripgrep"
 brew "eza"
 brew "fd"
 brew "procs"
+brew "bottom"
+brew "httpie"
 
 brew "jq"
 brew "git-delta"
