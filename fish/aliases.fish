@@ -31,8 +31,10 @@ function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
 function ..... ; cd ../../../.. ; end
 
-alias cf='cd (fd . -t d | fzf)'
-alias bf='bat (fzf)'
+alias fp='fzf --preview "bat --color=always {}" --preview-window "~3"'
+alias fpz='fzf --tmux 80% --preview "bat --color=always {}" --preview-window "~3"'
+alias cf='cd (fd . -t d | fzf --tmux 80%)'
+alias bf='bat (fpz)'
 
 alias ls='eza'
 alias ll='eza -l'

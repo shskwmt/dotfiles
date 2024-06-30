@@ -10,3 +10,4 @@ for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.fish' -not -path '*.g
 end
 
 zoxide init fish | source
+fzf --fish | source

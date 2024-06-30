@@ -25,6 +25,7 @@ brew "zoxide"
 brew "jq"
 brew "git-delta"
 brew "go-task"
+brew "tig"
 
 brew "tfenv"
 brew "tflint"

@@ -176,14 +176,10 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
-if [ -z $TMUX ]; then
-  if $(tmux has-session 2> /dev/null); then
-    tmux -2 attach
-  else
-    tmux -2
-  fi
-fi
-
-if [ -x "$(command -v fish)" ]; then
-  exec fish
-fi
+# if [ -z $TMUX ]; then
+#   if $(tmux has-session 2> /dev/null); then
+#     tmux -2 attach
+#   else
+#     tmux -2
+#   fi
+# fi
