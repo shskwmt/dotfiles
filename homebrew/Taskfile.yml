@@ -16,7 +16,7 @@ tasks:
     cmds:
       - stow -t ~ --ignore=".*\.fish" --ignore=".*\.bash" --ignore="Taskfile.yml" homebrew
     sources:
-      - ./homebrew/brewfile
+      - ./homebrew/.brewfile
 
   brewfile:clean:
     desc: Clean brewfile
@@ -36,4 +36,4 @@ tasks:
             eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           fi
         platforms: [linux]
-      - brew bundle --file "./homebrew/brewfile"
+      - brew bundle --file "./homebrew/.brewfile"

@@ -32,6 +32,9 @@ brew "jq"
 brew "go-task"
 brew "navi"
 
+# docker
+brew "lazydocker"
+
 # terraform
 brew "tfenv"
 brew "tflint"
