@@ -1,0 +1,20 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: toml
+
+  clean:
+    cmds:
+      - task: toml:clean
+
+  toml:
+    desc: Create toml symlink
+    cmds:
+      - stow -t ~/.config --ignore="Taskfile.yml" starship
+
+  toml:clean:
+    desc: Clean toml
+    cmds:
+      - stow -t ~ -D starship

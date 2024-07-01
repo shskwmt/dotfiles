@@ -14,20 +14,14 @@ tasks:
   brewfile:
     desc: Create symlink
     cmds:
-      - |
-        if [ -e "$HOME/.brewfile" -a ! -L "$HOME/.brewfile" ]; then
-          mv "~/.brewfile" "~/.brewfile.bak"
-        fi
-        if [ ! -L "$HOME/.brewfile" -a ! -e "$HOME/.brewfile" ]; then
-          ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "$HOME/.brewfile"
-        fi
+      - stow -t ~ --ignore=".*\.fish" --ignore=".*\.bash" --ignore="Taskfile.yml" homebrew
     sources:
       - ./homebrew/brewfile
 
   brewfile:clean:
     desc: Clean brewfile
     cmds:
-      - rm "~/.brewfile"
+      - stow -t ~ -D homebrew
 
   bundle:
     desc: Brew bundle

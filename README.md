@@ -4,9 +4,10 @@ my dotfiles
 
 ## Requirements
 
-- [homebrew](https://brew.sh/)
 - git
+- [homebrew](https://brew.sh/)
 - [task](https://taskfile.dev/)
+- [stow](https://www.gnu.org/software/stow/)
 
 ## Install
 

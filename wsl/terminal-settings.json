@@ -57,7 +57,7 @@
                 "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d kali-linux",
                 "font":
                 {
-                    "face": "Cascadia Code"
+                    "face": "NotoMono Nerd Font"
                 },
                 "useAcrylic": true,
                 "acrylicOpacity": 0.5,

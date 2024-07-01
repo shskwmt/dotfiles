@@ -1,17 +1,24 @@
 tap "homebrew/bundle"
 
+# dotfile
 brew "stow"
 
+# editor
 brew "emacs"
 brew "vim"
 
+# shell & terminal
 brew "tmux"
 brew "fish"
-brew "navi"
+brew "starship"
 
+# git
 brew "git"
 brew "gh"
+brew "git-delta"
+brew "tig"
 
+# cli tools
 brew "fzf"
 brew "bat"
 brew "ripgrep"
@@ -21,11 +28,10 @@ brew "procs"
 brew "bottom"
 brew "httpie"
 brew "zoxide"
-
 brew "jq"
-brew "git-delta"
 brew "go-task"
-brew "tig"
+brew "navi"
 
+# terraform
 brew "tfenv"
 brew "tflint"

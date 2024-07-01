@@ -19,6 +19,8 @@ includes:
     taskfile: ./tmux/Taskfile.yml
   git:
     taskfile: ./git/Taskfile.yml
+  starship:
+    taskfile: ./starship/Taskfile.yml
   doomemacs:
     taskfile: ./doomemacs/Taskfile.yml
   wsl:
@@ -33,6 +35,7 @@ tasks:
       - task: fish
       - task: tmux
       - task: git
+      - task: starship
       - task: doomemacs
       - task: wsl
 
@@ -40,6 +43,7 @@ tasks:
     cmds:
       - task: wsl:clean
       - task: doomemacs:clean
+      - task: starship:clean
       - task: git:clean
       - task: tmux:clean
       - task: fish:clean
