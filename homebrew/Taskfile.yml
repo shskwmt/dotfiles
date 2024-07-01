@@ -15,10 +15,10 @@ tasks:
     desc: Create symlink
     cmds:
       - |
-        if [ -e "~/.brewfile" -a ! -L "~/.brewfile" ]; then
+        if [ -e "$HOME/.brewfile" -a ! -L "$HOME/.brewfile" ]; then
           mv "~/.brewfile" "~/.brewfile.bak"
         fi
-        if [ ! -e "~/.brewfile" ]; then
+        if [ ! -L "$HOME/.brewfile" -a ! -e "$HOME/.brewfile" ]; then
           ln -s "{{ .DOTFILE_DIR }}/homebrew/brewfile" "$HOME/.brewfile"
         fi
     sources:
