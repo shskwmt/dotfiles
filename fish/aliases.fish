@@ -47,11 +47,17 @@ alias ft='fzf --tmux 80%'
 # fzf with preview and tmux
 alias fpt='fzf --tmux 80% --preview "bat --color=always {}" --preview-window "~3"'
 
+# fzf with preview and popup
+alias fpp="tmux popup -E -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"fp\"'"
+
 # cd with fzf
 alias cf='cd (fd . -t d | ft)'
 
 # bat with fzf
 alias bf='bat (fpt)'
+
+# bat with fzf with popup
+alias bfp="tmux popup -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"bat (fp)\"'"
 
 # ==========
 # ls
