@@ -68,13 +68,27 @@ alias la='eza -a'
 alias lla='eza -la'
 
 # ==========
-# others
+# docker
 # ==========
-alias ps='procs'
-alias grep='rg'
-
 # lazydocker
 alias ld="lazydocker"
 
 # lazydocker with popup
 alias ldp="tmux popup -E -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"ld\"'"
+
+# ==========
+# grep
+# ==========
+alias grep='rg'
+alias bg='batgrep'
+
+# ==========
+# process
+# ==========
+alias ps='procs'
+
+# ps with popup
+alias pp="tmux popup -E -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"ps\"'"
+
+# bottom with popup
+alias bp="tmux popup -E -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"btm\"'"

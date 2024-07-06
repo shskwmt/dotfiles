@@ -21,6 +21,7 @@ brew "tig"
 # cli tools
 brew "fzf"
 brew "bat"
+brew "bat-extras"
 brew "ripgrep"
 brew "eza"
 brew "fd"
