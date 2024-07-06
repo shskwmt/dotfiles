@@ -6,6 +6,7 @@
 
 [alias]
 	ps = "!git push origin $(git rev-parse --abbrev-ref @)"
+	pl = "!git pull origin $(git rev-parse --abbrev-ref @)"
 
 [interactive]
 	diffFilter = delta --color-only
