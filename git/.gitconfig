@@ -4,6 +4,9 @@
 [pager]
 	status = true
 
+[alias]
+	ps = "!git push origin $(git rev-parse --abbrev-ref @)"
+
 [interactive]
 	diffFilter = delta --color-only
 

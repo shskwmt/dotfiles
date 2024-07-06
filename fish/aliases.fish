@@ -66,6 +66,7 @@ alias ls='eza --icons'
 alias ll='eza -l --icons'
 alias la='eza -a --icons'
 alias lla='eza -la --icons'
+alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons'
 
 # ==========
 # grep
