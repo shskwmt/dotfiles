@@ -62,10 +62,10 @@ alias bfp="tmux popup -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"bat (fp
 # ==========
 # ls
 # ==========
-alias ls='eza'
-alias ll='eza -l'
-alias la='eza -a'
-alias lla='eza -la'
+alias ls='eza --icons'
+alias ll='eza -l --icons'
+alias la='eza -a --icons'
+alias lla='eza -la --icons'
 
 # ==========
 # docker
