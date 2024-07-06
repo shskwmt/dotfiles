@@ -10,7 +10,9 @@ starship init fish | source
 source ~/.config/fish/aliases.fish
 
 for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.fish' -not -path '*.git*' -not -path '*fish/*.fish')
-    source $src
+  source $src
 end
 
-source ~/.local.fish
+if test -e ~/.local.fish
+  source ~/.local.fish
+end
