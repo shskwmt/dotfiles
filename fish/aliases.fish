@@ -68,15 +68,6 @@ alias la='eza -a --icons'
 alias lla='eza -la --icons'
 
 # ==========
-# docker
-# ==========
-# lazydocker
-alias ld="lazydocker"
-
-# lazydocker with popup
-alias ldp="tmux popup -E -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"ld\"'"
-
-# ==========
 # grep
 # ==========
 alias grep='rg'
