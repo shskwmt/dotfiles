@@ -3,3 +3,6 @@
 
 # Inserts a blank line between shell prompts
 add_newline = true
+
+# Format
+format = '$all$directory$character'
