@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: install
+
+  clean:
+    desc: Clean ollama
+    cmds:
+      - rm `which ollama`
+
+  install:
+    desc: Install Ollama
+    cmds:
+      - curl -fsSL https://ollama.com/install.sh | sh

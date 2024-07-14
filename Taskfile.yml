@@ -25,6 +25,10 @@ includes:
     taskfile: ./doomemacs/Taskfile.yml
   wsl:
     taskfile: ./wsl/Taskfile.yml
+  ollama:
+    taskfile: ./ollama/Taskfile.yml
+  miniconda:
+    taskfile: ./miniconda/Taskfile.yml
 
 tasks:
   build:
