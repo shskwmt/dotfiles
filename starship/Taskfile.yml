@@ -12,7 +12,7 @@ tasks:
   toml:
     desc: Create toml symlink
     cmds:
-      - stow -t ~/.config --ignore="Taskfile.yml" starship
+      - stow -R -t ~/.config --ignore="Taskfile.yml" starship
 
   toml:clean:
     desc: Clean toml

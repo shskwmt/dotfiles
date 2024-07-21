@@ -27,7 +27,7 @@ tasks:
   tmux-conf:
     desc: Create symlinks
     cmds:
-      - stow -t ~ --ignore=".*\.bash" --ignore=".*\.fish" --ignore="Taskfile.yml" tmux
+      - stow -R -t ~ --ignore=".*\.bash" --ignore=".*\.fish" --ignore="Taskfile.yml" tmux
     generates:
       - ~/.tmux.conf
 

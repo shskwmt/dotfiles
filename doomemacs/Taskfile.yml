@@ -22,7 +22,7 @@ tasks:
   doom-d:
     desc: Create doom.d symlink
     cmds:
-      - stow -t ~ --ignore=".*\.bash" --ignore=".*\.fish" --ignore="Taskfile.yml" doomemacs
+      - stow -R -t ~ --ignore=".*\.bash" --ignore=".*\.fish" --ignore="Taskfile.yml" doomemacs
 
   doom-d:clean:
     desc: Clean doom.d symlink

@@ -12,7 +12,7 @@ tasks:
   bashrc:
     desc: Create symlinks
     cmds:
-      - stow -t ~ --ignore="Taskfile.yml" bash
+      - stow -R -t ~ --ignore="Taskfile.yml" bash
     generates:
       - ~/.bashrc
 

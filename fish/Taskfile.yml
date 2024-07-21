@@ -13,7 +13,7 @@ tasks:
   config:
     desc: Create config symlinks
     cmds:
-      - stow -t ~/.config/fish --ignore="Taskfile.yml" fish
+      - stow -R -t ~/.config/fish --ignore="Taskfile.yml" fish
 
   config:clean:
     desc: Clean config

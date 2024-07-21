@@ -17,7 +17,7 @@ tasks:
           mv ~/.gitconfig ~/.gitconfig.local
         fi
       - printf "{{ .YELLOW }}Set your user info to '~/.gitconfig.local'{{ .RESET }}"
-      - stow -t ~ --ignore=".*\.fish" --ignore="Taskfile.yml" git
+      - stow -R -t ~ --ignore=".*\.fish" --ignore="Taskfile.yml" git
 
   gitconfig:clean:
     desc: Clean gitconfig
