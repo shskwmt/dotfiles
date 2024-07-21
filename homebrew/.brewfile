@@ -19,6 +19,7 @@ brew "git-delta"
 brew "tig"
 
 # cli tools
+brew "man-db"
 brew "fzf"
 brew "bat"
 brew "bat-extras"
