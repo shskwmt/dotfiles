@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'tango)
+(setq doom-theme 'whiteboard)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -140,9 +140,6 @@
 ;; yasnippet
 (setq snippet-directory (getenv "EMACS_SNIPPET_DIR"))
 (setq yas-snippet-dirs `(snippet-directory))
-
-;; auto-dim-other-buffers
-(auto-dim-other-buffers-mode t)
 
 ;; disable-mouse
 (global-disable-mouse-mode)

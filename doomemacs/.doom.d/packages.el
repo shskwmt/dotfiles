@@ -50,7 +50,6 @@
 ;; (unpin! t)
 
 (package! mozc)
-(package! auto-dim-other-buffers)
 (package! vterm)
 (package! fish-mode)
 (package! disable-mouse)

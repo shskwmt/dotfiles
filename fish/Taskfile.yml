@@ -5,6 +5,7 @@ tasks:
     cmds:
       - task: config
       - task: fisher
+      - task: theme
 
   clean:
     cmds:
@@ -24,3 +25,8 @@ tasks:
     desc: Install or update fisher plugins
     cmds:
       - fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
+
+  theme:
+    desc: Setup theme
+    cmds:
+      - fish -c "fish_config theme save 'Catppuccin Mocha'"
