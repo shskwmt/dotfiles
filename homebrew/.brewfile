@@ -33,6 +33,7 @@ brew "zoxide"
 brew "jq"
 brew "go-task"
 brew "navi"
+brew "translate-shell"
 
 # docker
 brew "lazydocker"
