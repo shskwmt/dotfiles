@@ -34,6 +34,7 @@ brew "jq"
 brew "go-task"
 brew "navi"
 brew "translate-shell"
+brew "zip"
 
 # docker
 brew "lazydocker"
