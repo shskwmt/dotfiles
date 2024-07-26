@@ -1,14 +1,18 @@
 tap "homebrew/bundle"
+tap "arl/arl" # for gitmux
 
 # dotfile
 brew "stow"
+brew "go-task"
 
 # editor
 brew "emacs"
 brew "vim"
+brew "jq"
 
 # shell & terminal
 brew "tmux"
+brew "gitmux"
 brew "fish"
 brew "starship"
 
@@ -18,23 +22,27 @@ brew "gh"
 brew "git-delta"
 brew "tig"
 
-# cli tools
-brew "man-db"
+# file & directory
 brew "fzf"
 brew "bat"
 brew "bat-extras"
-brew "ripgrep"
-brew "eza"
 brew "fd"
+brew "eza"
+brew "ripgrep"
+brew "zoxide"
+brew "zip"
+
+# process
 brew "procs"
 brew "bottom"
-brew "httpie"
-brew "zoxide"
-brew "jq"
-brew "go-task"
+
+# help
+brew "man-db"
 brew "navi"
+
+# web
+brew "httpie"
 brew "translate-shell"
-brew "zip"
 
 # docker
 brew "lazydocker"
@@ -42,3 +50,5 @@ brew "lazydocker"
 # terraform
 brew "tfenv"
 brew "tflint"
+
+# others
