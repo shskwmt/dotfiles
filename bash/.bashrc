@@ -165,7 +165,13 @@ do
   source $src
 done
 
-# Alias definitions.
+# update packages
+sudo apt update
+sudo apt upgrade
+
+# build dotfiles
+cd $DOTFILES_ROOT && task build && cd ~
+
 # You may want to put all your additions into a separate file like
 # ~/.bash_envs, instead of adding them here directly.
 if [ -f ~/.bash_envs ]; then

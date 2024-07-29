@@ -15,6 +15,6 @@ windows:
       layout: main-horizontal
       panes:
         - emacs:
-            - e ~/.dotfiles
-        - fish
+            - cd ~/.dotfiles && e .
+        - fish:
             - cd ~/.dotfiles
