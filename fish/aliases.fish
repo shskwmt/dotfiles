@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 # `g co`, etc. subcommand expansion with `abbr`.
 function subcommand_abbr
   set -l cmd "$argv[1]"

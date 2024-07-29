@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f ~/miniconda3/bin/conda

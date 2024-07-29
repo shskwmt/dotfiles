@@ -13,6 +13,7 @@ brew "jq"
 # shell & terminal
 brew "tmux"
 brew "gitmux"
+brew "tmuxinator"
 brew "fish"
 brew "starship"
 

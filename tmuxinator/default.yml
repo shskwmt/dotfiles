@@ -1,0 +1,20 @@
+name: default
+root: ~
+
+enable_pane_titles: true
+pane_title_format: "#{pane_title}"
+
+windows:
+  - org:
+      layout: main-horizontal
+      panes:
+        - emacs:
+            - e
+        - fish
+  - dotfiles:
+      layout: main-horizontal
+      panes:
+        - emacs:
+            - e ~/.dotfiles
+        - fish
+            - cd ~/.dotfiles

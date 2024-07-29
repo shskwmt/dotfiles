@@ -23,6 +23,8 @@ includes:
     taskfile: ./starship/Taskfile.yml
   doomemacs:
     taskfile: ./doomemacs/Taskfile.yml
+  tmuxinator:
+    taskfile: ./tmuxinator/Taskfile.yml
   wsl:
     taskfile: ./wsl/Taskfile.yml
   ollama:
@@ -41,11 +43,13 @@ tasks:
       - task: git
       - task: starship
       - task: doomemacs
+      - task: tmuxinator
       - task: wsl
 
   clean:
     cmds:
       - task: wsl:clean
+      - task: tmuxinator:clean
       - task: doomemacs:clean
       - task: starship:clean
       - task: git:clean
