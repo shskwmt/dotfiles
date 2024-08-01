@@ -44,11 +44,15 @@ tasks:
       - task: starship
       - task: doomemacs
       - task: tmuxinator
+      - task: ollama
+      - task: miniconda
       - task: wsl
 
   clean:
     cmds:
       - task: wsl:clean
+      - task: ollama:clean
+      - task: miniconda:clean
       - task: tmuxinator:clean
       - task: doomemacs:clean
       - task: starship:clean
