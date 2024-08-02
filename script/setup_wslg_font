@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-cat << 'EOS' | sudo tee /etc/fonts/local.conf
+cat << EOS | sudo tee /etc/fonts/local.conf
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
     <dir>/mnt/c/Windows/Fonts</dir>
+    <dir>/mnt/c/Users/$(cmd.exe /c "echo %USERNAME%" 2>/dev/null | tr -d '\r\n')/AppData/Local/Microsoft/Windows/Fonts</dir>
 </fontconfig>
 <!-- Created by bash script from https://astherier.com/blog/2021/07/windows11-wsl2-wslg-japanese/ -->
 EOS

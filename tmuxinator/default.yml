@@ -9,7 +9,7 @@ windows:
       layout: main-horizontal
       panes:
         - emacs:
-            - e
+            - e .
         - fish
   - dotfiles:
       layout: main-horizontal

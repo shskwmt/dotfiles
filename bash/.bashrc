@@ -159,6 +159,10 @@ fi
 export DOTFILES_ROOT=$HOME/.dotfiles
 export EDITOR=vim
 
+if ! ps aux n | tr -s " " | cut -d " " -f 12 | grep -q "emacs"; then
+  emacs&
+fi
+
 # load bash files
 for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.bash' -not -path '*.git*')
 do
@@ -167,7 +171,7 @@ done
 
 # update packages
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 # build dotfiles
 cd $DOTFILES_ROOT && task build && cd ~
@@ -182,10 +186,10 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
-if [ -z $TMUX ]; then
-  if $(tmux has-session 2> /dev/null); then
-    tmux -2 attach
-  else
-    tmuxinator start default
-  fi
-fi
+#if [ -z $TMUX ]; then
+#  if $(tmux has-session 2> /dev/null); then
+#    tmux -2 attach
+#  else
+#    tmuxinator start default
+#  fi
+#fi
