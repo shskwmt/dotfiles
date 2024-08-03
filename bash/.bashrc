@@ -9,6 +9,13 @@ case $- in
   *) return;;
 esac
 
+if [ -z $TMUX ]; then
+  if $(tmux has-session 2> /dev/null); then
+    tmux -2 attach
+    return
+  fi
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -186,10 +193,4 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
-#if [ -z $TMUX ]; then
-#  if $(tmux has-session 2> /dev/null); then
-#    tmux -2 attach
-#  else
-#    tmuxinator start default
-#  fi
-#fi
+tmux -2
