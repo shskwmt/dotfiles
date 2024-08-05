@@ -9,4 +9,5 @@ windows:
       layout: main-horizontal
       panes:
         - fish:
+          - ~/.config/emacs/bin/doom env
           - if ! procs emacs --no-header | tr -s " " | cut -d " " -f 10 | rg -q "emacs"; emacs&; end
