@@ -166,10 +166,6 @@ fi
 export DOTFILES_ROOT=$HOME/.dotfiles
 export EDITOR=vim
 
-if ! ps aux n | tr -s " " | cut -d " " -f 12 | grep -q "emacs"; then
-  emacs&
-fi
-
 # load bash files
 for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.bash' -not -path '*.git*')
 do
@@ -182,6 +178,10 @@ sudo apt upgrade -y
 
 # build dotfiles
 cd $DOTFILES_ROOT && task build && cd ~
+
+if ! ps aux n | tr -s " " | cut -d " " -f 12 | grep -q "emacs"; then
+  emacs&
+fi
 
 # You may want to put all your additions into a separate file like
 # ~/.bash_envs, instead of adding them here directly.

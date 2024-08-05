@@ -6,7 +6,8 @@ brew "stow"
 brew "go-task"
 
 # editor
-brew "emacs"
+# in my environment emacs is installed by apt
+# brew "emacs"
 brew "vim"
 brew "jq"
 

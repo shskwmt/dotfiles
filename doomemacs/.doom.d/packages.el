@@ -52,5 +52,3 @@
 (package! mozc)
 (package! vterm)
 (package! fish-mode)
-(package! disable-mouse)
-(package! catppuccin-theme)
