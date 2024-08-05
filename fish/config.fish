@@ -5,6 +5,7 @@ end
 
 fish_config theme choose 'Catppuccin Mocha'
 
+status --is-interactive; and rbenv init - --no-rehash fish | source
 zoxide init fish | source
 fzf --fish | source
 starship init fish | source

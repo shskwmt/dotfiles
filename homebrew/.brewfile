@@ -53,4 +53,7 @@ brew "lazydocker"
 brew "tfenv"
 brew "tflint"
 
+# languages
+brew "rbenv"
+
 # others
