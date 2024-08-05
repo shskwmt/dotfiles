@@ -142,9 +142,6 @@
 (setq snippet-directory (getenv "EMACS_SNIPPET_DIR"))
 (setq yas-snippet-dirs `(snippet-directory))
 
-;; disable-mouse
-(global-disable-mouse-mode)
-
 ;; window
 (global-set-key (kbd "C-c <left>") 'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
