@@ -3,13 +3,16 @@ version: '3'
 tasks:
   default:
     cmds:
+      - task: emacs-mozc
       - task: doom
       - task: doom-d
-      - task: emacs-mozc
+      - task: doom:upgrade
+      - task: doom:sync
 
   clean:
     cmds:
       - task: doom-d:clean
+      - task: doom:clean
 
   doom:
     cmds:
@@ -18,8 +21,11 @@ tasks:
           git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
           ~/.config/emacs/bin/doom install
         fi
-        ~/.config/emacs/bin/doom upgrade
-        ~/.config/emacs/bin/doom sync
+
+  doom:clean:
+    desc: uninstall doom
+    cmds:
+      - rm -rf ~/.config/emacs
 
   doom-d:
     desc: Create doom.d symlink
@@ -31,8 +37,16 @@ tasks:
     cmds:
       - stow -t ~ -D doomemacs
 
+  doom:upgrade:
+    cmds:
+      - fish -c "~/.config/emacs/bin/doom upgrade"
+
+  doom:sync:
+    cmds:
+      - fish -c "~/.config/emacs/bin/doom sync"
+
   emacs-mozc:
     desc: Install emacs-mozc
     cmds:
-      - cmd: sudo apt install -y emacs-mozc
+      - cmd: if ! apt search "^emacs-mozc$" | grep -q "installed"; then sudo apt install -y emacs-mozc; fi
         platforms: [linux]

@@ -5,16 +5,8 @@ enable_pane_titles: true
 pane_title_format: "#{pane_title}"
 
 windows:
-  - org:
+  - fish:
       layout: main-horizontal
       panes:
-        - emacs:
-            - e .
-        - fish
-  - dotfiles:
-      layout: main-horizontal
-      panes:
-        - emacs:
-            - cd ~/.dotfiles && e .
         - fish:
-            - cd ~/.dotfiles
+          - if ! procs emacs --no-header | tr -s " " | cut -d " " -f 10 | rg -q "emacs"; emacs&; end

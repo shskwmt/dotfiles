@@ -9,11 +9,9 @@ case $- in
   *) return;;
 esac
 
-if [ -z $TMUX ]; then
-  if $(tmux has-session 2> /dev/null); then
-    tmux -2 attach
-    return
-  fi
+if $(tmux has-session 2> /dev/null); then
+  tmux -2 attach
+  return
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -175,13 +173,12 @@ done
 # update packages
 sudo apt update
 sudo apt upgrade -y
+sudo apt dist-upgrade -y
+sudo apt autoremove -y
 
 # build dotfiles
-cd $DOTFILES_ROOT && task build && cd ~
-
-if ! ps aux n | tr -s " " | cut -d " " -f 12 | grep -q "emacs"; then
-  emacs&
-fi
+cd $DOTFILES_ROOT && task build
+cd ~
 
 # You may want to put all your additions into a separate file like
 # ~/.bash_envs, instead of adding them here directly.
@@ -193,4 +190,4 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
-tmux -2
+tmuxinator default
