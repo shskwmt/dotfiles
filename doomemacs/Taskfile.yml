@@ -4,8 +4,8 @@ tasks:
   default:
     cmds:
       - task: emacs-mozc
-      - task: doom
       - task: doom-d
+      - task: doom
       - task: doom:upgrade
       - task: doom:sync
 
@@ -19,7 +19,7 @@ tasks:
       - |
         if [ ! -d ~/.config/emacs ]; then
           git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-          ~/.config/emacs/bin/doom install
+          DOOMDIR=~/.doom.d ~/.config/emacs/bin/doom install
         fi
 
   doom:clean:
