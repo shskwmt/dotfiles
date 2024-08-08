@@ -58,3 +58,4 @@ brew "rbenv"
 
 # others
 brew "imagemagick"
+brew "asdf"
