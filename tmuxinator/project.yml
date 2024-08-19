@@ -1,9 +1,6 @@
 name: project
 root: <%= @args[0] %>
 
-enable_pane_titles: true
-pane_title_format: "#{pane_title}"
-
 windows:
   - org:
       layout: main-horizontal

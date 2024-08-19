@@ -1,13 +1,10 @@
 name: default
 root: ~
 
-enable_pane_titles: true
-pane_title_format: "#{pane_title}"
-
 windows:
-  - fish:
+  - emacs:
       layout: main-horizontal
       panes:
-        - fish:
+        - emacs:
           - ~/.config/emacs/bin/doom env
-          - if ! procs emacs --no-header | tr -s " " | cut -d " " -f 10 | rg -q "emacs"; emacs&; end
+          - if ! procs emacs --no-header | tr -s " " | cut -d " " -f 10 | rg -q "emacs"; emacs -nw; end
