@@ -5,3 +5,6 @@ test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export HOMEBREW_BUNDLE_FILE=~/.brewfile
+
+# setup asdf
+. "/home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh"
