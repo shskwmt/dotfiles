@@ -50,5 +50,6 @@
 ;; (unpin! t)
 
 (package! mozc)
+(package! ghub)
 (package! vterm)
 (package! fish-mode)

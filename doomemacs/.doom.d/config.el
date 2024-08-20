@@ -150,5 +150,8 @@
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "C-t") 'other-window)
 
+;; doom-modeline
+(setq doom-modeline-github t)
+
 ;; open
 (global-set-key (kbd "C-c o p") 'list-processes)
