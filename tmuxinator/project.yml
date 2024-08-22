@@ -8,7 +8,7 @@ windows:
         - emacs:
             - e
         - fish
-  - editor:
+  - project:
       layout: main-horizontal
       panes:
         - emacs:

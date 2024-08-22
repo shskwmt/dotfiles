@@ -2,9 +2,18 @@ name: default
 root: ~
 
 windows:
-  - emacs:
+  - main:
       layout: main-horizontal
       panes:
         - emacs:
           - ~/.config/emacs/bin/doom env
-          - if ! procs emacs --no-header | tr -s " " | cut -d " " -f 10 | rg -q "emacs"; emacs -nw; end
+          - e
+        - fish
+  - dotfiles:
+      layout: main-horizontal
+      panes:
+        - emacs:
+          - ~/.config/emacs/bin/doom env
+          - e $DOTFILES_ROOT
+        - fish:
+          - cd $DOTFILES_ROOT
