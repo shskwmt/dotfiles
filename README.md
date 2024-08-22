@@ -5,7 +5,6 @@ my dotfiles
 ## Requirements
 
 - git
-- emacs
 - [homebrew](https://brew.sh/)
 - [task](https://taskfile.dev/)
 - [stow](https://www.gnu.org/software/stow/)
