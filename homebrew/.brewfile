@@ -12,11 +12,14 @@ brew "vim"
 brew "jq"
 
 # shell & terminal
-brew "tmux"
-brew "gitmux"
-brew "tmuxinator"
 brew "fish"
 brew "starship"
+
+# tmux
+brew "tmux"
+brew "gitmux"
+brew "tmux-mem-cpu-load"
+brew "tmuxinator"
 
 # git
 brew "git"
