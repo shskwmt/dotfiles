@@ -6,11 +6,10 @@ windows:
       layout: main-horizontal
       panes:
         - emacs:
-            - e
-        - fish
+            - e -e '(progn (+workspace/rename "org-<%= File.basename(@args[0])%>") (org-open-today))'
   - project:
       layout: main-horizontal
       panes:
         - emacs:
-            - e .
-        - fish
+            - e -e '(progn (+workspace/rename "<%= File.basename(@args[0])%>") (find-file "<%= @args[0] %>"))'
+        - pwd

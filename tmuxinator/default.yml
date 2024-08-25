@@ -7,13 +7,15 @@ windows:
       panes:
         - emacs:
           - ~/.config/emacs/bin/doom env
-          - e
-        - fish
+          - emacs --daemon
+          - e -e '(+workspace/rename "org")'
+        - pwd
   - dotfiles:
       layout: main-horizontal
       panes:
         - emacs:
-          - ~/.config/emacs/bin/doom env
-          - e $DOTFILES_ROOT
+          - cd $DOTFILES_ROOT
+          - sleep 5 # wait for main pane
+          - e -e '(progn (+workspace/rename "dotfiles") (find-file (getenv "DOTFILES_ROOT")))'
         - fish:
           - cd $DOTFILES_ROOT
