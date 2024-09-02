@@ -86,3 +86,8 @@ alias pp="tmux popup -E -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"ps\"'
 
 # bottom with popup
 alias bp="tmux popup -E -d '#{pane_current_path}' -w 80% -h 80% 'fish -c \"btm\"'"
+
+# bashly
+# https://github.com/DannyBen/bashly
+# https://hub.docker.com/r/dannyben/bashly
+alias bashly='docker run --rm -it --user $(id -u):$(id -g) --volume "$PWD:/app" dannyben/bashly'
