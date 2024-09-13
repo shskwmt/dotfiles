@@ -11,7 +11,8 @@ tasks:
 
   config:
     cmds:
-      - stow -R -t ~/.emacs.default/.emacs.d --ignore=".*\.fish" --ignore="Taskfile.yml" vanillaemacs
+      - mkdir -p ~/.emacs.vanilla
+      - stow -R -t ~/.emacs.vanilla --ignore=".*\.fish" --ignore="Taskfile.yml" vanillaemacs
 
   config:clean:
     cmds:
