@@ -7,7 +7,7 @@ windows:
       panes:
         - emacs:
           - ~/.config/emacs/bin/doom env
-          - emacs --with-profile doom --daemon &
+          - emacs --with-profile doom --daemon
           - e -e '(+workspace/rename "org")'
         - pwd
   - dotfiles:

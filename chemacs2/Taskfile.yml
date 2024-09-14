@@ -14,10 +14,12 @@ tasks:
   chemacs2:
     cmds:
       - |
-        [ -f ~/.emacs ] && mv ~/.emacs ~/.emacs.bak
-        [ -d ~/.emacs.d ] && mv ~/.emacs.d ~/.emacs.default
-        git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
-        mkdir ~/.emacs.sandbox
+        if [ ! -f ~/.emacs.d/chemacs.el ]; then
+          [ -f ~/.emacs ] && mv ~/.emacs ~/.emacs.bak
+          [ -d ~/.emacs.d ] && mv ~/.emacs.d ~/.emacs.default
+          git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
+          mkdir -p ~/.emacs.sandbox
+        fi
 
   chemacs:clean:
     cmds:
