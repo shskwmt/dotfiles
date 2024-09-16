@@ -23,8 +23,8 @@ includes:
     taskfile: ./starship/Taskfile.yml
   chemacs2:
     taskfile: ./chemacs2/Taskfile.yml
-  vanillaemacs:
-    taskfile: ./vanillaemacs/Taskfile.yml
+  hikizanemacs:
+    taskfile: ./hikizanemacs/Taskfile.yml
   doomemacs:
     taskfile: ./doomemacs/Taskfile.yml
   tmuxinator:
@@ -47,7 +47,7 @@ tasks:
       - task: git
       - task: starship
       - task: chemacs2
-      - task: vanillaemacs
+      - task: hikizanemacs
       - task: doomemacs
       - task: tmuxinator
       - task: ollama
@@ -61,7 +61,7 @@ tasks:
       - task: miniconda:clean
       - task: tmuxinator:clean
       - task: doomemacs:clean
-      - task: vanillaemacs:clean
+      - task: ibukiemacs:clean
       - task: chemacs2:clean
       - task: starship:clean
       - task: git:clean

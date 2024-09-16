@@ -1,4 +1,4 @@
-;;; init.el --- -*- lexical-binding: t; -*-
+;;; hikizan-package-manager.el --- package manager  -*- lexical-binding: t; -*-
 
 ;;; setup elpaca
 ;;; https://github.com/progfolio/elpaca/blob/master/doc/manual.md
@@ -40,3 +40,7 @@
     (load "./elpaca-autoloads")))
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
+
+(setq elpaca-queue-limit 15)
+
+(provide 'hikizan-package-manager)
