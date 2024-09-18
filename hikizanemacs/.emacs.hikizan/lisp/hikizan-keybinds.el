@@ -52,9 +52,9 @@
 ;; https://github.com/emacs-evil/evil
 (elpaca evil
   (setq evil-normal-state-cursor 'box)
+  (evil-mode 1)
   (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\033[5 q")))
-  (add-hook 'evil-insert-state-exit-hook  (lambda () (send-string-to-terminal "\033[2 q")))
-  (evil-mode 1))
+  (add-hook 'evil-insert-state-exit-hook  (lambda () (send-string-to-terminal "\033[2 q"))))
 
 (elpaca which-key
   (setq which-key-sort-order #'which-key-key-order-alpha

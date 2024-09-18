@@ -11,5 +11,6 @@
 (require 'hikizan-editor)
 (require 'hikizan-org)
 (require 'hikizan-ui)
+(require 'hikizan-snippet)
 
 (setq system-time-local "C") ;; to avoid Japanese in the time stamp

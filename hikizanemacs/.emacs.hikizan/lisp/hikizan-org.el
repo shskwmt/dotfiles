@@ -5,9 +5,9 @@
 (setq org-agenda-files (list org-directory))
 (setq org-log-done 'time)
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
+      '(("t" "Todo" entry (file org-default-notes-file)
 	 "* TODO %?\n  %T")
-        ("m" "Memo" entry (file+headline org-default-notes-file "Memos")
+        ("m" "Memo" entry (file org-default-notes-file)
 	 "* %?\n  %T")))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
