@@ -6,7 +6,7 @@
 (add-to-list 'load-path hikizan-lisp-dir)
 
 (require 'hikizan-package-manager)
-(require 'hikizan-custom)
 (require 'hikizan-keybinds)
+(require 'hikizan-project)
 (require 'hikizan-editor)
 (require 'hikizan-ui)
