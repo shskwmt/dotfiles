@@ -6,7 +6,9 @@
 (setq org-log-done 'time)
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
-	 "* TODO %?\n  %i\n  %a")))
+	 "* TODO %?\n  %T")
+        ("m" "Memo" entry (file+headline org-default-notes-file "Memos")
+	 "* %?\n  %T")))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)

@@ -49,6 +49,10 @@
 
 ;;; packages
 
+;; https://github.com/emacs-evil/evil
+(elpaca evil
+  (evil-mode 1))
+
 (elpaca which-key
   (setq which-key-sort-order #'which-key-key-order-alpha
         which-key-sort-uppercase-first nil
