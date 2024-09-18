@@ -10,7 +10,8 @@
 (require 'hikizan-project)
 (require 'hikizan-editor)
 (require 'hikizan-org)
-(require 'hikizan-ui)
 (require 'hikizan-snippet)
+(require 'hikizan-programming)
+(require 'hikizan-ui)
 
 (setq system-time-local "C") ;; to avoid Japanese in the time stamp
