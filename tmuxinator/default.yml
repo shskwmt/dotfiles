@@ -2,20 +2,7 @@ name: default
 root: ~
 
 windows:
-  - main:
+  - emacs:
       layout: main-horizontal
       panes:
-        - emacs:
-          - ~/.config/emacs/bin/doom env
-          - emacs --with-profile doom --daemon
-          - e -e '(+workspace/rename "org")'
-        - pwd
-  - dotfiles:
-      layout: main-horizontal
-      panes:
-        - emacs:
-          - cd $DOTFILES_ROOT
-          - sleep 5 # wait for main pane
-          - e -e '(progn (+workspace/rename "dotfiles") (find-file (getenv "DOTFILES_ROOT")))'
-        - fish:
-          - cd $DOTFILES_ROOT
+        - emacs
