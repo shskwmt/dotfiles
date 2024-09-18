@@ -51,6 +51,9 @@
 
 ;; https://github.com/emacs-evil/evil
 (elpaca evil
+  (setq evil-normal-state-cursor 'box)
+  (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\033[5 q")))
+  (add-hook 'evil-insert-state-exit-hook  (lambda () (send-string-to-terminal "\033[2 q")))
   (evil-mode 1))
 
 (elpaca which-key
