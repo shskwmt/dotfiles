@@ -1,0 +1,3 @@
+[submodule "hikizanemacs/emacs"]
+	path = hikizanemacs/emacs
+	url = git@github.com:shskwmt/hikizan-emacs.git

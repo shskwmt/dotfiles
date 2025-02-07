@@ -11,8 +11,8 @@ tasks:
 
   config:
     cmds:
-      - stow -R -t ~ --ignore=".*\.fish" --ignore="Taskfile.yml" hikizanemacs
+      - stow -R -t ~/.config --ignore=".*\.fish" --ignore="Taskfile.yml" hikizanemacs
 
   config:clean:
     cmds:
-      - stow -t ~ -D hikizan
+      - stow -t ~ -D hikizanemacs
