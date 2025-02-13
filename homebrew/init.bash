@@ -7,4 +7,4 @@ test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/bre
 export HOMEBREW_BUNDLE_FILE=~/.brewfile
 
 # setup asdf
-. "/home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
