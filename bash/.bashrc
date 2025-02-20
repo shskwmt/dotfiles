@@ -177,7 +177,7 @@ sudo apt dist-upgrade -y
 sudo apt autoremove -y
 
 # build dotfiles
-cd $DOTFILES_ROOT && git pull origin main && task build
+cd $DOTFILES_ROOT && git pull origin main && git submodule update --recursive && task build
 cd ~
 
 # You may want to put all your additions into a separate file like
