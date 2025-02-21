@@ -2,7 +2,11 @@ name: default
 root: ~
 
 windows:
-  - emacs:
+  - base:
       layout: main-horizontal
       panes:
-        - emacs --daemon
+        - fish
+  - dotfiles:
+      layout: main-horizontal
+      panes:
+        - cd ~/.dotfiles
