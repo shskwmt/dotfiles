@@ -5,4 +5,4 @@ windows:
   - emacs:
       layout: main-horizontal
       panes:
-        - emacs
+        - emacs --daemon
