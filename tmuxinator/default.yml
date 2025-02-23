@@ -5,8 +5,12 @@ windows:
   - base:
       layout: main-horizontal
       panes:
-        - fish
+        - emacs --daemon
   - dotfiles:
       layout: main-horizontal
       panes:
         - cd ~/.dotfiles
+  - ollama:
+      layout: main-horizontal
+      panes:
+        - ollama start
