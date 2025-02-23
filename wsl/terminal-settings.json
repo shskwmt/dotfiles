@@ -56,7 +56,8 @@
     {
         "defaults":
         {
-            "colorScheme": "Catppuccin Mocha"
+            "colorScheme": "Catppuccin Mocha",
+	    "encoding": "utf-8"
         },
         "list":
         [
