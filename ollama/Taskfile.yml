@@ -13,5 +13,8 @@ tasks:
   install:
     desc: Install Ollama
     cmds:
-      - curl -fsSL https://ollama.com/install.sh | sh
+      - |
+        if ! which ollama > /dev/null; then
+          curl -fsSL https://ollama.com/install.sh | sh
+        fi
 
