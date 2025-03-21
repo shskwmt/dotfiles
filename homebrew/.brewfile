@@ -7,7 +7,7 @@ brew "go-task"
 
 # editor
 # in my environment emacs is installed by apt
-brew "emacs"
+# brew "emacs"
 brew "vim"
 brew "jq"
 
@@ -59,6 +59,14 @@ brew "tflint"
 # languages
 brew "rbenv"
 
+# libraries
+brew "libgccjit"
+brew "libxpm"
+brew "libjpeg"
+brew "libtiff"
+brew "giflib"
+
 # others
 brew "imagemagick"
 brew "asdf"
+brew "texinfo"

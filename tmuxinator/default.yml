@@ -6,10 +6,6 @@ windows:
       layout: main-horizontal
       panes:
         - emacs --daemon
-  - dotfiles:
-      layout: main-horizontal
-      panes:
-        - cd ~/.dotfiles
   - ollama:
       layout: main-horizontal
       panes:
