@@ -26,6 +26,7 @@ brew "git"
 brew "gh"
 brew "git-delta"
 brew "tig"
+brew "act"
 
 # file & directory
 brew "fzf"
@@ -70,3 +71,4 @@ brew "giflib"
 brew "imagemagick"
 brew "asdf"
 brew "texinfo"
+brew "gnutls"
