@@ -162,7 +162,7 @@ if ! shopt -oq posix; then
 fi
 
 export DOTFILES_ROOT=$HOME/.dotfiles
-export EDITOR=emacsclient
+export EDITOR=vim
 
 # load bash files
 for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.bash' -not -path '*.git*')

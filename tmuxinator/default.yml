@@ -5,8 +5,4 @@ windows:
   - base:
       layout: main-horizontal
       panes:
-        - emacs --daemon
-  - ollama:
-      layout: main-horizontal
-      panes:
-        - ollama start
+        - pwd
