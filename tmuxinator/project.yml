@@ -1,8 +1,0 @@
-name: project
-root: <%= @args[0] %>
-
-windows:
-  - base:
-      layout: main-horizontal
-      panes:
-        - pwd

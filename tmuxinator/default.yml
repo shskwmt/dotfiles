@@ -1,8 +1,0 @@
-name: default
-root: ~
-
-windows:
-  - base:
-      layout: main-horizontal
-      panes:
-        - pwd

@@ -5,7 +5,6 @@ tasks:
     cmds:
       - task: config
       - task: font
-      - task: wslu
 
   clean:
     cmds:
@@ -17,34 +16,11 @@ tasks:
     cmds:
       - |
         if uname -r | grep -q "microsoft"; then
-          bash -c "./script/setup_wsl.el"
+          bash -c "{{ .DOTFILE_DIR }}/wsl/setup_wsl.el"
         fi
 
   font:
     desc: Copy font configs
     platforms: [linux]
     cmds:
-      - ./script/setup_wslg_font
-  wslu:
-    desc: Install wslu
-    platforms: [linux]
-    cmds:
-      - |
-        if uname -r | grep -q "microsoft"; then
-          if ! apt search "^gnupg2$" | grep -q "installed"; then
-            sudo apt install -y gnupg2
-          fi
-          if ! apt search "^apt-transport-https$" | grep -q "installed"; then
-            sudo apt install -y apt-transport-https
-          fi
-          if [ ! -e "/usr/share/keyrings/wslu-archive-keyring.pgp" ]; then
-            wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
-          fi
-          if [ ! -e "/etc/apt/sources.list.d/wslu.list" ]; then
-            echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.wslutiliti.es/kali kali-rolling main" | sudo tee -a /etc/apt/sources.list.d/wslu.list
-            sudo apt update
-          fi
-          if ! apt search "^wslu$" | grep -q "installed"; then
-            sudo apt install -y wslu
-          fi
-        fi
+      - "{{ .DOTFILE_DIR }}/wsl/setup_wslg_font"

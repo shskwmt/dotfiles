@@ -15,22 +15,14 @@ includes:
     taskfile: ./bash/Taskfile.yml
   fish:
     taskfile: ./fish/Taskfile.yml
-  tmux:
-    taskfile: ./tmux/Taskfile.yml
   git:
     taskfile: ./git/Taskfile.yml
   starship:
     taskfile: ./starship/Taskfile.yml
   hikizanemacs:
     taskfile: ./hikizanemacs/Taskfile.yml
-  tmuxinator:
-    taskfile: ./tmuxinator/Taskfile.yml
   wsl:
     taskfile: ./wsl/Taskfile.yml
-  ollama:
-    taskfile: ./ollama/Taskfile.yml
-  miniconda:
-    taskfile: ./miniconda/Taskfile.yml
 
 tasks:
   build:
@@ -39,25 +31,17 @@ tasks:
       - task: homebrew
       - task: bash
       - task: fish
-      - task: tmux
       - task: git
       - task: starship
       - task: hikizanemacs
-      - task: tmuxinator
-      - task: ollama
-      - task: miniconda
       - task: wsl
 
   clean:
     cmds:
       - task: wsl:clean
-      - task: ollama:clean
-      - task: miniconda:clean
-      - task: tmuxinator:clean
       - task: hikizanemacs:clean
       - task: starship:clean
       - task: git:clean
-      - task: tmux:clean
       - task: fish:clean
       - task: bash:clean
       - task: homebrew:clean

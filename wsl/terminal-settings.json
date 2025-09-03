@@ -63,14 +63,14 @@
         [
             {
                 "colorScheme": "Catppuccin Mocha",
-                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d kali-linux",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Debian",
                 "font":
                 {
-                    "face": "NotoMono Nerd Font"
+                    "face": "NotoMono Nerd Font Mono"
                 },
                 "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
                 "hidden": false,
-                "name": "kali-linux",
+                "name": "Debian",
                 "source": "Windows.Terminal.Wsl"
             },
             {

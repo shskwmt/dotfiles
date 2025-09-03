@@ -1,25 +1,21 @@
-tap "homebrew/bundle"
 tap "arl/arl" # for gitmux
 
 # dotfile
 brew "stow"
-brew "go-task"
+brew "go-task/tap/go-task"
 
 # editor
-# in my environment emacs is installed by apt
-# brew "emacs"
+brew "emacs"
 brew "vim"
 brew "jq"
 
 # shell & terminal
 brew "fish"
 brew "starship"
+brew "devcontainer"
 
-# tmux
-brew "tmux"
-brew "gitmux"
-brew "tmux-mem-cpu-load"
-brew "tmuxinator"
+# database
+brew "postgresql"
 
 # git
 brew "git"
@@ -49,9 +45,7 @@ brew "navi"
 # web
 brew "httpie"
 brew "translate-shell"
-
-# docker
-brew "lazydocker"
+brew "wget"
 
 # terraform
 brew "tfenv"
@@ -59,16 +53,7 @@ brew "tflint"
 
 # languages
 brew "rbenv"
-
-# libraries
-brew "libgccjit"
-brew "libxpm"
-brew "libjpeg"
-brew "libtiff"
-brew "giflib"
+brew "python"
 
 # others
-brew "imagemagick"
-brew "asdf"
 brew "texinfo"
-brew "gnutls"
