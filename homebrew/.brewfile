@@ -16,6 +16,7 @@ brew "devcontainer"
 
 # database
 brew "postgresql"
+brew "mysql"
 
 # git
 brew "git"

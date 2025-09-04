@@ -63,7 +63,7 @@
         [
             {
                 "colorScheme": "Catppuccin Mocha",
-                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Debian",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Debian -u shskwmt",
                 "font":
                 {
                     "face": "NotoMono Nerd Font Mono"
